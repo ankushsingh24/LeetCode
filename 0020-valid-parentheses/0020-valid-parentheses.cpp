@@ -11,14 +11,8 @@ public:
             
             else
             {
-                // char top = st.top();
-                
-                if(st.empty() || 
-                   (s[i] == ')' && st.top() != '(') || 
-                   (s[i] == '}' && st.top() != '{') || 
-                   (s[i] == ']' && st.top() != '['))
+                if(st.empty() || (s[i] == ')' && st.top() != '(') || (s[i] == ']' && st.top() != '[') || (s[i] == '}' && st.top() != '{'))
                     return false;
-                
                 st.pop();
             }
         }
