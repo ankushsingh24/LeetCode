@@ -1,6 +1,6 @@
 class Solution {
 public:
-    void backtrack(vector<int> &temp, vector<vector<int>> &ans, vector<int> &nums)
+    void permutation(vector<int> &nums, vector<vector<int>> &ans, vector<int> &temp)
     {
         if(temp.size() == nums.size())
         {
@@ -13,7 +13,7 @@ public:
             if(find(temp.begin(), temp.end(), num) == temp.end())
             {
                 temp.push_back(num);
-                backtrack(temp, ans, nums);
+                permutation(nums, ans, temp);
                 temp.pop_back();
             }
         }
@@ -24,7 +24,7 @@ public:
         vector<vector<int>> ans;
         vector<int> temp;
         
-        backtrack(temp, ans, nums);
+        permutation(nums, ans, temp);
         return ans;
     }
 };
